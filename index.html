@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoFusion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-branding logo">PhotoFusion</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Explore</a></li>
+                <li><a href="#about" class="nav-link">Log in</a></li>
+                <li><a href="#experience" class="nav-link">Join</a></li>
+                <li><button class="upload-button">Upload</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <div class="container banner-text">
+            <h1>Stunning royalty-free images & royalty-free stock</h1>
+            <p>Over 4.6 million+ high quality stock images, videos and music shared by our talented community.</p>
+            <div class="search-bar">
+                <input id="search-bar" type="text" placeholder="Search for all images on PhotoFusion">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="categories">
+                <button class="category-button" data-category="nature">Nature</button>
+                <button class="category-button" data-category="travel">Travel</button>
+                <button class="category-button" data-category="food">Food</button>
+                <button class="category-button" data-category="woman">Woman</button>
+                <button class="category-button" data-category="animals">Animals</button>
+                <button class="category-button" data-category="fashion">Fashion</button>
+                <button class="category-button" data-category="people">People</button>
+                <button class="category-button" data-category="sea">Sea</button>
+                <button class="category-button" data-category="cat">Cat</button>
+                <button class="category-button" data-category="wallpaper">Wallpaper</button>
+                <button class="category-button" data-category="background">Background</button>
+                <button class="category-button" data-category="iphone wallpaper">iPhone Wallpaper</button>
+                <button class="category-button" data-category="sports">Sports</button>
+            </div>
+            <div class="dropdown">
+                <select id="sort-dropdown">
+                    <option value="popular">Trending</option>
+                    <option value="latest">Latest</option>
+                </select>
+            </div>
+            <div class="gallery" id="gallery"> </div>
+             <!-- Modal for displaying image details -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="artist-info">
+                            <img id="artistImg" src="" alt="Artist Image">
+                            <span id="artistName"></span>
+                        </div>
+                        <div class="top-buttons">
+                            <button id="collection-open" class="button" data-text="Add to Collection">
+                                <!-- id="addToCollection" inside button tag, i write 2 id's in this button  -->
+                                <i class="fa-regular fa-bookmark"></i>
+                                <span class="button-text">Collect</span>
+                            </button>
+                            <button id="like-open" class="button" data-text="Like">
+                                <!-- id="like" inside button tag, i write 2 id's in this button  -->
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="button-text">Like</span>
+                            </button>
+                            <a id="downloadButton" download class="button download-button" data-text="download">
+                                <i class="fa-solid fa-download" style="color: #ffffff;"></i>
+                                <span class="button-text">Download</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modalImage" src="" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <button id="prev-button" style="display: none;">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer">
+                    <div class="footer-section">
+                        <p>Free photos and videos shared by talented creators.</p>
+                        <p>Download one of our apps:</p>
+                        <div class="app-links">
+                            <a href="#" class="os"> <img src="./assets/Logo/apple.png" alt=""> Apple </a>
+                            <a href="#" class="os"> <img src="./assets/Logo/android-svgrepo-com.png" alt=""> Android </a>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#"><img src="./assets/Logo/facebook_1051309.png" alt=""></a>
+                            <a href="#"><img src="./assets/Logo/twitter_11823292.png" alt=""></a>
+                            <a href="#"><img src="./assets/Logo/instagram_1384031.png" alt=""></a>
+                            <a href="#"><img src="./assets/Logo/pinterest_4902409.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>PhotoFusion</h3>
+                        <ul>
+                            <li><a href="#">Free Stock Photos</a></li>
+                            <li><a href="#">Free Videos</a></li>
+                            <li><a href="#">Popular Searches</a></li>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">Challenges</a></li>
+                            <li><a href="#">Leaderboard</a></li>
+                            <li><a href="#">Other Plugins & Apps</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Report Content</a></li>
+                            <li><a href="#">Become a Hero</a></li>
+                            <li><a href="#">Partner with Pexels</a></li>
+                            <li><a href="#">Image & Video API</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Free Stock Photos</h3>
+                        <div class="tag-links">
+                            <a href="#">Black and White Photography</a>
+                            <a href="#">Happy Birthday Images</a>
+                            <a href="#">Free Business Videos</a>
+                            <a href="#">Happy New Year Images</a>
+                            <a href="#">Cool Wallpapers</a>
+                            <a href="#">Best HD Wallpapers</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PhotoFusion</p>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">License</a></li>
+                    <li><a href="#">Imprint</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
